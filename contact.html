@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Right Hand Operation</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.book-call-card{
+  background:var(--white);border:1px solid rgba(13,59,62,0.08);border-radius:14px;
+  padding:2.25rem;text-align:center;max-width:640px;margin:0 auto;
+}
+.book-call-label{font-size:.65rem;font-weight:600;letter-spacing:1.5px;color:#13D4D4;text-transform:uppercase;margin-bottom:.5rem;}
+.book-call-card h3{font-size:1.15rem;font-weight:500;color:#0a2e2e;margin-bottom:.5rem;}
+.book-call-card p{font-size:.85rem;color:#52696a;line-height:1.65;margin-bottom:1.25rem;}
+.book-call-btn{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:#e6fafa;color:#0f4f4f;padding:.65rem 1.5rem;
+  border-radius:8px;font-weight:500;font-size:.85rem;text-decoration:none;
+  border:1px solid rgba(19,212,212,0.3);transition:all .25s;
+}
+.book-call-btn:hover{background:var(--teal-mid);color:var(--teal-dark);}
+@media(max-width:600px){
+  .book-call-card{padding:1.5rem 1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV OVERLAY + DRAWER -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer-close" id="drawerClose">&#10005;</button>
+  <a href="services.html">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="contact.html" class="drawer-cta">Let's Talk</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Metallic turquoise logo design.png" alt="Right Hand Operation">
+      <span class="logo-text">Right Hand Operation</span>
+    </a>
+    <div class="nav-links">
+      <a href="services.html">Services</a>
+
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Let's Talk</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- CONTACT BANNER -->
+<section class="contact-banner" style="margin-top:80px;">
+  <h2>Tell Us What You're Facing</h2>
+  <p>Whether it's a regulatory exam, a compliance gap, or a program you need built from scratch, we can help.</p>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-body">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-text">
+        <h3>Ready to Modernize Your Operations?</h3>
+        <p>Whether you need compliance program design for your fintech or a roadmap to automate manual workflows, we can help you get there.</p>
+        <div class="contact-text-divider"></div>
+        <h4>Partnerships and Collaborations</h4>
+        <p>We work alongside compliance consulting firms and AML/KYC tool vendors looking to integrate intelligent automation into their workflows. Let's explore how we can work together.</p>
+        <div class="contact-text-divider"></div>
+        <h4>Get in touch directly</h4>
+        <p style="margin-bottom:.5rem;">info@righthandoperation.com</p>
+        <p>TX</p>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault();">
+        <label>Contact Us</label>
+        <input type="text" placeholder="Your full name">
+        <input type="email" placeholder="Your email *" required>
+        <input type="text" placeholder="Company name *" required>
+        <select>
+          <option value="" disabled selected>What are you looking for?</option>
+          <option>AML/BSA program design or remediation</option>
+          <option>Fractional CCO or compliance leadership</option>
+          <option>Crypto or FinCEN compliance</option>
+          <option>Intelligent automation</option>
+          <option>Partnership opportunity</option>
+          <option>General question</option>
+        </select>
+        <textarea placeholder="Your message"></textarea>
+        <button type="submit" class="contact-submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK A CALL -->
+<section style="background:var(--beige-light);padding:2.5rem 0;">
+  <div class="container">
+    <div class="book-call-card">
+      <div class="book-call-label">Prefer a conversation?</div>
+      <h3>Book a Call with Shweta</h3>
+      <p>Pick a time that works for you. No prep needed. We will figure out where you are and what you need.</p>
+      <a href="https://zcal.co/smokashi" target="_blank" rel="noopener" class="book-call-btn">Book a Call <span>&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Right Hand Operation LLC &middot; TX</span>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+  
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* MOBILE NAV */
+const drawer = document.getElementById('navDrawer');
+const overlay = document.getElementById('navOverlay');
+function openNav(){ drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeNav(){ drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+document.querySelector('.mobile-toggle').addEventListener('click', openNav);
+overlay.addEventListener('click', closeNav);
+document.getElementById('drawerClose').addEventListener('click', closeNav);
+</script>
+
+</body>
+</html>

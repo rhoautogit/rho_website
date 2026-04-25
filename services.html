@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Right Hand Operation LLC</title>
+<meta name="description" content="Right Hand Operation LLC delivers compliance infrastructure for fintechs. Bank readiness, audit-proof data governance, and vendor implementation support.">
+<meta property="og:title" content="Services - Right Hand Operation LLC">
+<meta property="og:description" content="Compliance infrastructure that holds up with Banks. Bank readiness, data governance, and vendor-led implementation.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── SERVICES PAGE ──────────────────────────────────────── */
+
+[id]{scroll-margin-top:100px;}
+
+/* Override global max-widths so text spans full container */
+.services-page .section-sub{max-width:100%;}
+
+/* Uniform tight section spacing */
+.services-page .section{padding:1.25rem 0;}
+.services-page .section-header{margin-bottom:.75rem;}
+
+/* Hero */
+.svc-hero{background:var(--beige-light);margin-top:80px;padding:3.5rem 0 0;}
+.svc-hero .section-title{font-size:clamp(2.2rem,4.5vw,3.2rem);max-width:100%;margin-bottom:1rem;}
+.svc-hero .section-sub{max-width:100%;margin-bottom:1.75rem;font-size:1.02rem;}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:transparent;color:var(--teal);padding:.6rem 1.3rem;
+  border-radius:8px;font-weight:500;font-size:.82rem;text-decoration:none;
+  transition:all .25s;border:1.5px solid var(--border-strong);
+}
+.btn-ghost:hover{border-color:var(--teal-mid);background:var(--white);transform:translateY(-1px);}
+
+/* Credibility bar */
+.cred-bar{
+  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+  padding:1.25rem 0;margin-top:1.25rem;
+}
+.cred-bar-item{font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:500;line-height:1.4;}
+.cred-bar-item strong{color:var(--teal-dark);font-weight:500;font-size:.82rem;display:block;letter-spacing:0;text-transform:none;}
+.cred-bar-divider{width:1px;height:28px;background:var(--border-strong);}
+
+/* Ladder */
+.ladder-intro{max-width:100%;margin-bottom:.75rem;margin-top:-.25rem;}
+.ladder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.ladder-card{
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:1.75rem 1.75rem;position:relative;overflow:hidden;transition:all .3s;
+}
+.ladder-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.04);transform:translateY(-2px);}
+.ladder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.ladder-card:nth-child(1)::before{background:rgba(19,212,212,.3);}
+.ladder-card:nth-child(2)::before{background:rgba(19,212,212,.6);}
+.ladder-card:nth-child(3)::before{background:var(--teal-mid);}
+.ladder-step{font-size:.65rem;font-weight:600;letter-spacing:1.5px;color:var(--teal-mid);text-transform:uppercase;margin-bottom:.5rem;}
+.ladder-title{font-size:1.15rem;font-weight:500;color:var(--teal-dark);margin-bottom:.85rem;}
+.ladder-label{font-size:.65rem;font-weight:600;letter-spacing:.8px;color:var(--text-light);text-transform:uppercase;margin-bottom:.25rem;margin-top:.85rem;}
+.ladder-label:first-of-type{margin-top:0;}
+.ladder-text{font-size:.82rem;color:var(--text-secondary);line-height:1.65;text-align:justify;}
+.ladder-outcome{
+  font-size:.82rem;color:var(--teal);font-weight:500;line-height:1.55;
+  padding-top:1rem;margin-top:1rem;border-top:1px solid var(--border);
+}
+
+/* Capability cards (same visual as ladder cards) */
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.cap-card{
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:1.75rem 1.75rem;position:relative;overflow:hidden;transition:all .3s;
+}
+.cap-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.04);transform:translateY(-2px);}
+.cap-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal-mid);}
+.cap-title{font-size:1.05rem;font-weight:500;color:var(--teal-dark);margin-bottom:.4rem;}
+.cap-tagline{font-size:.78rem;color:var(--teal);font-weight:500;margin-bottom:1rem;line-height:1.5;}
+.cap-list{list-style:none;padding:0;margin:0;}
+.cap-list li{
+  display:flex;gap:.6rem;
+  font-size:.78rem;color:var(--text-secondary);line-height:1.55;
+  padding:.35rem 0;
+}
+.cap-list li::before{
+  content:"";min-width:5px;width:5px;height:5px;
+  border-radius:50%;background:var(--teal);flex-shrink:0;margin-top:.45rem;
+}
+
+/* Engagement detail cards */
+.engage-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;}
+.engage-detail{
+  background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:1.75rem 1.75rem;position:relative;overflow:hidden;transition:all .3s;
+}
+.engage-detail:hover{box-shadow:0 8px 24px rgba(0,0,0,.04);transform:translateY(-2px);}
+.engage-detail::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal-mid);}
+.engage-detail-meta{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.engage-tag{
+  font-size:.6rem;font-weight:600;padding:.2rem .65rem;border-radius:100px;
+  background:var(--teal-pale);color:var(--teal);letter-spacing:.5px;text-transform:uppercase;
+}
+.engage-detail h3{font-size:1.05rem;font-weight:500;color:var(--teal-dark);margin-bottom:.4rem;}
+.engage-detail-best{font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1rem;text-align:justify;}
+.engage-includes{list-style:none;padding:1rem 0 0;margin:0;border-top:1px solid var(--border);}
+.engage-includes li{
+  display:flex;gap:.6rem;
+  font-size:.78rem;color:var(--text-secondary);line-height:1.55;
+  padding:.3rem 0;
+}
+.engage-includes li::before{
+  content:"";min-width:5px;width:5px;height:5px;
+  border-radius:50%;background:var(--teal-mid);flex-shrink:0;margin-top:.45rem;
+}
+.engage-partner-note{
+  font-size:.75rem;color:var(--teal);font-weight:500;
+  margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border);
+}
+
+/* Section CTA (pill-style background) */
+.section-cta-wrap{text-align:center;margin-top:1.5rem;}
+.section-cta{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:var(--teal-pale);color:var(--teal);padding:.6rem 1.4rem;
+  border-radius:8px;font-weight:500;font-size:.82rem;text-decoration:none;
+  transition:all .25s;border:1px solid rgba(19,212,212,0.3);
+}
+.section-cta:hover{background:var(--teal-mid);color:var(--teal-dark);transform:translateY(-1px);}
+
+/* Positioning block */
+.positioning{background:var(--teal-dark);padding:2.5rem 0;}
+.positioning-inner{max-width:100%;margin:0 auto;text-align:center;}
+.positioning-inner p{font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.85;margin-bottom:1.5rem;}
+.positioning-inner p:last-child{color:var(--teal-mid);font-weight:500;margin-bottom:0;font-size:1.15rem;}
+
+@media(max-width:900px){
+  .svc-hero{padding:3rem 0 1.5rem;}
+  .ladder-grid{grid-template-columns:1fr;gap:1rem;}
+  .cap-grid{grid-template-columns:1fr;gap:1rem;}
+  .engage-detail-grid{grid-template-columns:1fr;}
+  .positioning{padding:2rem 0;}
+  .positioning-inner p{font-size:.95rem;}
+  .cred-bar-divider{display:none;}
+  .cred-bar{gap:1rem;}
+  .hero-btns{flex-direction:column;gap:.6rem;}
+  .hero-btns .btn-primary,
+  .hero-btns .btn-ghost{width:100%;justify-content:center;text-align:center;}
+}
+@media(max-width:600px){
+  .svc-hero .section-title{font-size:clamp(1.3rem,5vw,1.8rem);}
+  .cred-bar{gap:.75rem;}
+  .cred-bar-item{font-size:.65rem;}
+  .cred-bar-item strong{font-size:.75rem;}
+}
+</style>
+</head>
+<body class="services-page">
+
+<!-- NAV OVERLAY + DRAWER -->
+<div class="nav-overlay" id="navOverlay"></div>
+<div class="nav-drawer" id="navDrawer">
+  <button class="nav-drawer-close" id="drawerClose">&#10005;</button>
+  <a href="services.html" class="active">Services</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="contact.html" class="drawer-cta">Let's Talk</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="Metallic turquoise logo design.png" alt="Right Hand Operation">
+      <span class="logo-text">Right Hand Operation</span>
+    </a>
+    <div class="nav-links">
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Let's Talk</a>
+    <button class="mobile-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Services</span></div>
+    <span class="pill pill-teal">Compliance Infrastructure</span>
+    <div class="section-title">Compliance Infrastructure that holds up</div>
+    <p class="section-sub">Right Hand Operation LLC helps fintechs move from compliance on paper to compliance that works in real systems. Bank readiness, data governance, and vendor-led implementation.</p>
+    <div class="hero-btns">
+      <a href="#bank-ready" class="btn-primary" style="font-size:.82rem;padding:.6rem 1.3rem;">Get Bank-Ready <span>&#8594;</span></a>
+      <a href="#audit-proof" class="btn-ghost">Prepare for an Audit</a>
+      <a href="#production" class="btn-ghost">Support an Implementation</a>
+    </div>
+    <div class="cred-bar">
+      <div class="cred-bar-item"><strong>15+ years</strong>USAA &amp; Wells Fargo</div>
+      <div class="cred-bar-divider"></div>
+      <div class="cred-bar-item"><strong>BCBS 239</strong>Data integrity frameworks</div>
+      <div class="cred-bar-divider"></div>
+      <div class="cred-bar-item"><strong>9+ platforms</strong>Risk &amp; compliance systems</div>
+      <div class="cred-bar-divider"></div>
+      <div class="cred-bar-item"><strong>US</strong>Serving fintechs nationwide</div>
+    </div>
+  </div>
+</section>
+
+<!-- LADDER -->
+<section class="section" id="ladder" style="background:var(--beige-light);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="pill pill-teal">The journey</span>
+    </div>
+    <p class="section-sub ladder-intro reveal">Most teams don't fail at policy. They fail when policy has to translate into data, controls, and production systems.</p>
+    <div class="ladder-grid">
+      <div class="ladder-card reveal" id="bank-ready">
+        <div class="ladder-step">Step 01</div>
+        <div class="ladder-title">Get Bank-Ready</div>
+        <div class="ladder-label">The challenge</div>
+        <div class="ladder-text">You are preparing for a sponsor Bank relationship or building your compliance foundation for the first time.</div>
+        <div class="ladder-label">What we do</div>
+        <div class="ladder-text">AML/KYC/KYB program design, policies and procedures, risk assessments, and sponsor Bank readiness. We build what your Bank partner will expect to see on day one.</div>
+        <div class="ladder-outcome">A compliance program that gets approved, not sent back.</div>
+      </div>
+      <div class="ladder-card reveal" id="audit-proof">
+        <div class="ladder-step">Step 02</div>
+        <div class="ladder-title">Make It Audit-Proof</div>
+        <div class="ladder-label">The challenge</div>
+        <div class="ladder-text">Your program exists, but now the Bank, auditor, or regulator wants proof that it actually works.</div>
+        <div class="ladder-label">What we do</div>
+        <div class="ladder-text">Data lineage mapping, audit trail validation, control evidence, model validation for AI/ML and rules-based tools, and BCBS 239-style data integrity frameworks. We connect your compliance program to the data that proves it.</div>
+        <div class="ladder-outcome">You can show how your data works, not just say it does.</div>
+      </div>
+      <div class="ladder-card reveal" id="production">
+        <div class="ladder-step">Step 03</div>
+        <div class="ladder-title">Make It Work in Production</div>
+        <div class="ladder-label">The challenge</div>
+        <div class="ladder-text">You have selected a vendor or platform, but implementation is stuck because compliance, product, and engineering are not aligned.</div>
+        <div class="ladder-label">What we do</div>
+        <div class="ladder-text">Partner with vendors and internal teams to translate regulatory requirements into implementation logic, technical requirements, control documentation, and go-live readiness.</div>
+        <div class="ladder-outcome">Vendor implementations that work, scale, and stand up to scrutiny.</div>
+      </div>
+    </div>
+    <div class="section-cta-wrap reveal">
+      <a href="contact.html" class="section-cta">Tell us where you are <span>&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CORE CAPABILITIES -->
+<section class="section" style="background:var(--beige-light);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="pill pill-teal">Core capabilities</span>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card reveal">
+        <div class="cap-title">Bank Partnership Readiness</div>
+        <ul class="cap-list">
+          <li>Sponsor Bank readiness and diligence preparation</li>
+          <li>AML/KYC/KYB program structure and documentation</li>
+          <li>Fraud and sanctions controls</li>
+          <li>Risk assessments and regulatory documentation</li>
+          <li>Policy and procedure development</li>
+        </ul>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-title">Data & Systems</div>
+        <p class="cap-tagline">Most firms stop at policy. This is where things break.</p>
+        <ul class="cap-list">
+          <li>Map data across compliance-critical systems</li>
+          <li>Define how regulatory data is created, transformed, and reported</li>
+          <li>Build audit-ready lineage and controls</li>
+          <li>Ensure reporting is accurate and explainable</li>
+          <li>BCBS 239 data integrity frameworks</li>
+        </ul>
+      </div>
+      <div class="cap-card reveal">
+        <div class="cap-title">Implementation Leadership</div>
+        <p class="cap-tagline">Vendor-partner. Not vendor-replacement.</p>
+        <ul class="cap-list">
+          <li>Partner with vendors to support successful implementations</li>
+          <li>Translate regulatory requirements into technical and operational requirements</li>
+          <li>Independent model validation for vendor-deployed AI/ML tools</li>
+          <li>Align compliance, product, engineering, and vendor teams</li>
+          <li>Support go-live readiness and post-implementation evidence</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-cta-wrap reveal">
+      <a href="contact.html" class="section-cta">Explore our capabilities <span>&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT MODELS -->
+<section class="section" style="background:var(--beige-light);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="pill pill-teal">Engagement models</span>
+    </div>
+    <div class="engage-detail-grid">
+      <div class="engage-detail reveal">
+        <div class="engage-detail-meta">
+          <span class="engage-tag">4 Weeks</span>
+        </div>
+        <h3>Technical Integrity Audit</h3>
+        <p class="engage-detail-best">Pre-audit, pre-launch, or when gaps are unclear. A focused review before the Bank or regulator finds what you missed.</p>
+        <ul class="engage-includes">
+          <li>Review of data flows, controls, and regulatory logic</li>
+          <li>Identification of gaps before external examination</li>
+          <li>Model validation for AI/ML and rules-based compliance tools</li>
+          <li>Prioritized remediation roadmap</li>
+          <li>Executive summary with findings and recommendations</li>
+        </ul>
+      </div>
+      <div class="engage-detail reveal">
+        <div class="engage-detail-meta">
+          <span class="engage-tag">Scoped Engagement</span>
+        </div>
+        <h3>Data & Governance Build</h3>
+        <p class="engage-detail-best">For teams that need audit-ready proof their data and controls actually work. Not policies on a shelf. Evidence in a system.</p>
+        <ul class="engage-includes">
+          <li>Data lineage maps across compliance-critical systems</li>
+          <li>Control frameworks tied to regulatory requirements</li>
+          <li>Evidence documentation and reporting integrity review</li>
+          <li>Audit-ready deliverables and handoff</li>
+        </ul>
+      </div>
+      <div class="engage-detail reveal">
+        <div class="engage-detail-meta">
+          <span class="engage-tag">Vendor Partner Model</span>
+        </div>
+        <h3>Vendor Implementation Support</h3>
+        <p class="engage-detail-best">For vendors or fintechs implementing AML, risk, fraud, onboarding, or compliance platforms.</p>
+        <ul class="engage-includes">
+          <li>Vendor partnership and implementation governance</li>
+          <li>Requirements translation from regulatory to technical</li>
+          <li>Compliance-to-engineering alignment</li>
+          <li>Go-live readiness support</li>
+          <li>Audit-ready documentation</li>
+        </ul>
+        <p class="engage-partner-note">We partner with vendors to make implementations succeed. We do not replace them.</p>
+      </div>
+    </div>
+    <div class="section-cta-wrap reveal">
+      <a href="contact.html" class="section-cta">Start the conversation <span>&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING BLOCK -->
+<section class="positioning">
+  <div class="container">
+    <div class="positioning-inner">
+      <p>Most compliance firms focus on policies and documentation. That matters, but it is not where most failures happen.</p>
+      <p>Failures happen when compliance has to work inside data flows, vendor platforms, reporting logic, and production systems.</p>
+      <p>That is where Right Hand Operation LLC works.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section cta-teal" style="padding:1.75rem 0 2rem;">
+  <div class="container" style="text-align:center;">
+    <div class="section-title">Ready to move from policy to production?</div>
+    <p class="section-sub" style="margin:0 auto 1.5rem;">Tell us where you are in the journey. We will help you understand what needs to be true before your next Bank review, audit, launch, or implementation.</p>
+    <a href="contact.html" class="btn-primary">Start the Conversation <span>&#8594;</span></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 Right Hand Operation LLC &middot; TX</span>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCROLL REVEAL + MOBILE NAV -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 4) * 0.08 + 's';
+  observer.observe(el);
+});
+
+requestAnimationFrame(() => {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) el.classList.add('visible');
+  });
+});
+
+const drawer = document.getElementById('navDrawer');
+const overlay = document.getElementById('navOverlay');
+function openNav(){ drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeNav(){ drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow=''; }
+document.querySelector('.mobile-toggle').addEventListener('click', openNav);
+overlay.addEventListener('click', closeNav);
+document.getElementById('drawerClose').addEventListener('click', closeNav);
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
