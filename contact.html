@@ -66,22 +66,28 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-text">
+        <div class="book-call-card" style="text-align:left;">
+          <div class="book-call-label">Prefer a conversation?</div>
+          <h3>Book a Call with Shweta</h3>
+          <p>Pick a time that works for you. No prep needed. We will figure out where you are and what you need.</p>
+          <a href="https://zcal.co/smokashi" target="_blank" rel="noopener" class="book-call-btn">Book a Call <span>&#8594;</span></a>
+        </div>
+        <div class="contact-text-divider"></div>
         <h3>Ready to Modernize Your Operations?</h3>
         <p>Whether you need compliance program design for your fintech or a roadmap to automate manual workflows, we can help you get there.</p>
         <div class="contact-text-divider"></div>
         <h4>Partnerships and Collaborations</h4>
         <p>We work alongside compliance consulting firms and AML/KYC tool vendors looking to integrate intelligent automation into their workflows. Let's explore how we can work together.</p>
-        <div class="contact-text-divider"></div>
-        <h4>Get in touch directly</h4>
-        <p style="margin-bottom:.5rem;">info@righthandoperation.com</p>
-        <p>TX</p>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault();">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="3748e227-9359-4592-881a-24cb514bd04b">
+        <input type="hidden" name="subject" value="New inquiry from righthandoperation.com">
+        <input type="hidden" name="from_name" value="RHO Website">
         <label>Contact Us</label>
-        <input type="text" placeholder="Your full name">
-        <input type="email" placeholder="Your email *" required>
-        <input type="text" placeholder="Company name *" required>
-        <select>
+        <input type="text" name="name" placeholder="Your full name">
+        <input type="email" name="email" placeholder="Your email *" required>
+        <input type="text" name="company" placeholder="Company name *" required>
+        <select name="looking_for">
           <option value="" disabled selected>What are you looking for?</option>
           <option>AML/BSA program design or remediation</option>
           <option>Fractional CCO or compliance leadership</option>
@@ -90,24 +96,17 @@
           <option>Partnership opportunity</option>
           <option>General question</option>
         </select>
-        <textarea placeholder="Your message"></textarea>
-        <button type="submit" class="contact-submit">Send</button>
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button type="submit" class="contact-submit" id="submitBtn">Send</button>
+        <div id="formSuccess" style="display:none;text-align:center;padding:1.5rem 0;">
+          <p style="font-size:1.1rem;font-weight:500;color:#0a2e2e;margin-bottom:.5rem;">Thank you for reaching out.</p>
+          <p style="font-size:.85rem;color:#52696a;">We will get back to you shortly.</p>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
-<!-- BOOK A CALL -->
-<section style="background:var(--beige-light);padding:2.5rem 0;">
-  <div class="container">
-    <div class="book-call-card">
-      <div class="book-call-label">Prefer a conversation?</div>
-      <h3>Book a Call with Shweta</h3>
-      <p>Pick a time that works for you. No prep needed. We will figure out where you are and what you need.</p>
-      <a href="https://zcal.co/smokashi" target="_blank" rel="noopener" class="book-call-btn">Book a Call <span>&#8594;</span></a>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
@@ -133,6 +132,37 @@ function closeNav(){ drawer.classList.remove('open'); overlay.classList.remove('
 document.querySelector('.mobile-toggle').addEventListener('click', openNav);
 overlay.addEventListener('click', closeNav);
 document.getElementById('drawerClose').addEventListener('click', closeNav);
+
+/* CONTACT FORM */
+const form = document.getElementById('contactForm');
+const btn = document.getElementById('submitBtn');
+const successMsg = document.getElementById('formSuccess');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    });
+    const data = await res.json();
+    if (data.success) {
+      form.querySelectorAll('input:not([type=hidden]), select, textarea').forEach(el => el.style.display = 'none');
+      form.querySelector('label').style.display = 'none';
+      btn.style.display = 'none';
+      successMsg.style.display = 'block';
+    } else {
+      btn.textContent = 'Something went wrong. Try again.';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Something went wrong. Try again.';
+    btn.disabled = false;
+  }
+});
 </script>
 
 </body>
