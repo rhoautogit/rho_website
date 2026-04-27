@@ -35,14 +35,6 @@
 }
 .btn-ghost:hover{border-color:var(--teal-mid);background:var(--white);transform:translateY(-1px);}
 
-/* Credibility bar */
-.cred-bar{
-  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
-  padding:1.25rem 0;margin-top:1.25rem;
-}
-.cred-bar-item{font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:500;line-height:1.4;}
-.cred-bar-item strong{color:var(--teal-dark);font-weight:500;font-size:.82rem;display:block;letter-spacing:0;text-transform:none;}
-.cred-bar-divider{width:1px;height:28px;background:var(--border-strong);}
 
 /* Ladder */
 .ladder-intro{max-width:100%;margin-bottom:.75rem;margin-top:-.25rem;}
@@ -140,17 +132,12 @@
   .engage-detail-grid{grid-template-columns:1fr;}
   .positioning{padding:2rem 0;}
   .positioning-inner p{font-size:.95rem;}
-  .cred-bar-divider{display:none;}
-  .cred-bar{gap:1rem;}
   .hero-btns{flex-direction:column;gap:.6rem;}
   .hero-btns .btn-primary,
   .hero-btns .btn-ghost{width:100%;justify-content:center;text-align:center;}
 }
 @media(max-width:600px){
   .svc-hero .section-title{font-size:clamp(1.3rem,5vw,1.8rem);}
-  .cred-bar{gap:.75rem;}
-  .cred-bar-item{font-size:.65rem;}
-  .cred-bar-item strong{font-size:.75rem;}
 }
 </style>
 </head>
@@ -194,15 +181,6 @@
       <a href="#bank-ready" class="btn-primary" style="font-size:.82rem;padding:.6rem 1.3rem;">Get Bank-Ready <span>&#8594;</span></a>
       <a href="#audit-proof" class="btn-ghost">Prepare for an Audit</a>
       <a href="#production" class="btn-ghost">Support an Implementation</a>
-    </div>
-    <div class="cred-bar">
-      <div class="cred-bar-item"><strong>15+ years</strong>USAA &amp; Wells Fargo</div>
-      <div class="cred-bar-divider"></div>
-      <div class="cred-bar-item"><strong>BCBS 239</strong>Data integrity frameworks</div>
-      <div class="cred-bar-divider"></div>
-      <div class="cred-bar-item"><strong>9+ platforms</strong>Risk &amp; compliance systems</div>
-      <div class="cred-bar-divider"></div>
-      <div class="cred-bar-item"><strong>US</strong>Serving fintechs nationwide</div>
     </div>
   </div>
 </section>

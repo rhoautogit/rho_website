@@ -609,11 +609,3 @@ footer{border-top:1px solid var(--border);padding:2.5rem 0;}
   .section-title{font-size:clamp(1.3rem,5vw,1.8rem);}
   .contact-grid{gap:2rem;}
 }
-
-/* Credibility bar */
-.cred-bar{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding:1.25rem 0;margin-top:1.25rem;}
-.cred-bar-item{font-size:.72rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;font-weight:500;line-height:1.4;}
-.cred-bar-item strong{color:var(--teal-dark);font-weight:500;font-size:.82rem;display:block;letter-spacing:0;text-transform:none;}
-.cred-bar-divider{width:1px;height:28px;background:var(--border-strong);}
-@media(max-width:768px){.cred-bar-divider{display:none;}.cred-bar{gap:1rem;}}
-@media(max-width:600px){.cred-bar{gap:.75rem;}.cred-bar-item{font-size:.65rem;}.cred-bar-item strong{font-size:.75rem;}}
